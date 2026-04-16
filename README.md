@@ -23,6 +23,14 @@ Le serveur de développement démarre sur `localhost:4321`.
 | `npm run build`   | Build de production dans `./dist/`   |
 | `npm run preview` | Prévisualiser le build en local      |
 
+## Déploiement
+
+Hébergé sur [Netlify](https://app.netlify.com). Le déploiement est automatique : chaque push sur `main` déclenche un build et met le site en ligne.
+
+- **URL** : https://resilient-rugelach-f1bf07.netlify.app/
+- **Build** : `npm run build` (configuré dans `netlify.toml`)
+- **Dossier publié** : `dist/`
+
 ## Stack technique
 
 - **Astro 6** — framework de génération statique
