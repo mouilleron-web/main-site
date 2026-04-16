@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://resilient-rugelach-f1bf07.netlify.app',
+  site: 'https://mouilleronweb.netlify.app',
   vite: {
     plugins: [tailwindcss()]
   }

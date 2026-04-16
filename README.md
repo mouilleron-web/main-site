@@ -27,7 +27,7 @@ Le serveur de développement démarre sur `localhost:4321`.
 
 Hébergé sur [Netlify](https://app.netlify.com). Le déploiement est automatique : chaque push sur `main` déclenche un build et met le site en ligne.
 
-- **URL** : https://resilient-rugelach-f1bf07.netlify.app/
+- **URL** : https://mouilleronweb.netlify.app
 - **Build** : `npm run build` (configuré dans `netlify.toml`)
 - **Dossier publié** : `dist/`
 
