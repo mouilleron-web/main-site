@@ -1,0 +1,28 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-charcoal text-white/70 py-12">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-2">
+        <span class="text-xl font-bold text-terracotta-light">CM</span>
+        <span class="text-white/40">.</span>
+        <span class="text-sm">Développeur Web Freelance</span>
+      </div>
+
+      <nav>
+        <ul class="flex items-center gap-6 text-sm">
+          <li><a href="#accueil" class="hover:text-white transition-colors">Accueil</a></li>
+          <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a></li>
+          <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="border-t border-white/10 mt-8 pt-8 text-center text-sm text-white/40">
+      <p>&copy; {year} Cédric Mouilleron. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
