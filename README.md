@@ -1,43 +1,31 @@
-# Astro Starter Kit: Minimal
+# Site Perso — Cédric Mouilleron
 
-```sh
-npm create astro@latest -- --template minimal
+Site vitrine freelance développeur web, construit avec [Astro](https://astro.build) et [Tailwind CSS](https://tailwindcss.com).
+
+## Prérequis
+
+- Node.js >= 22.12.0
+
+## Démarrage
+
+```bash
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Le serveur de développement démarre sur `localhost:4321`.
 
-## 🚀 Project Structure
+## Scripts
 
-Inside of your Astro project, you'll see the following folders and files:
+| Commande          | Description                          |
+| :---------------- | :----------------------------------- |
+| `npm run dev`     | Serveur de développement             |
+| `npm run build`   | Build de production dans `./dist/`   |
+| `npm run preview` | Prévisualiser le build en local      |
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Stack technique
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Astro 6** — framework de génération statique
+- **Tailwind CSS v4** — styles utilitaires avec thème personnalisé
+- **Formspree** — backend du formulaire de contact
+- **Google Fonts** — police Inter
