@@ -1,4 +1,4 @@
-# Site Perso — Cédric Mouilleron
+# Site Perso — Mouilleron Web
 
 Site vitrine freelance développeur web, construit avec [Astro](https://astro.build) et [Tailwind CSS](https://tailwindcss.com).
 
