@@ -8,10 +8,10 @@ const navLinks = [
 ];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b border-cream-dark">
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
   <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="#accueil" class="flex items-center gap-0">
-      <span class="text-sm font-semibold tracking-widest uppercase text-charcoal">MOUILLERON</span>
+      <span id="logo-name" class="text-sm font-semibold tracking-widest uppercase text-cream transition-colors duration-300">MOUILLERON</span>
       <span class="w-6 h-0.5 bg-terracotta mx-2.5"></span>
       <span class="text-sm font-light tracking-widest uppercase text-terracotta">WEB</span>
     </a>
@@ -22,7 +22,8 @@ const navLinks = [
         <li>
           <a
             href={link.href}
-            class="text-charcoal-light hover:text-terracotta transition-colors duration-200 font-medium"
+            class="nav-link text-cream/70 hover:text-terracotta transition-colors duration-200 font-medium"
+            data-section={link.href.slice(1)}
           >
             {link.label}
           </a>
@@ -37,14 +38,14 @@ const navLinks = [
       aria-label="Ouvrir le menu"
       aria-expanded="false"
     >
-      <span class="block w-6 h-0.5 bg-charcoal transition-all duration-300" id="bar1"></span>
-      <span class="block w-6 h-0.5 bg-charcoal transition-all duration-300" id="bar2"></span>
-      <span class="block w-6 h-0.5 bg-charcoal transition-all duration-300" id="bar3"></span>
+      <span class="block w-6 h-0.5 bg-cream transition-all duration-300" id="bar1"></span>
+      <span class="block w-6 h-0.5 bg-cream transition-all duration-300" id="bar2"></span>
+      <span class="block w-6 h-0.5 bg-cream transition-all duration-300" id="bar3"></span>
     </button>
   </nav>
 
   {/* Mobile menu */}
-  <div id="mobile-menu" class="md:hidden hidden bg-cream border-t border-cream-dark">
+  <div id="mobile-menu" class="md:hidden bg-cream border-t border-cream-dark overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0; opacity: 0;">
     <ul class="flex flex-col items-center gap-6 py-8">
       {navLinks.map((link) => (
         <li>
@@ -63,28 +64,99 @@ const navLinks = [
 <script>
   const toggle = document.getElementById('menu-toggle')!;
   const menu = document.getElementById('mobile-menu')!;
+  const header = document.getElementById('site-header')!;
+  const logoName = document.getElementById('logo-name')!;
   const bar1 = document.getElementById('bar1')!;
   const bar2 = document.getElementById('bar2')!;
   const bar3 = document.getElementById('bar3')!;
+  const navLinksEls = document.querySelectorAll('.nav-link[data-section]');
+  const bars = [bar1, bar2, bar3];
+  let isOpen = false;
+  let isScrolled = false;
 
   toggle.addEventListener('click', () => {
-    const expanded = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!expanded));
-    menu.classList.toggle('hidden');
-    bar1.classList.toggle('rotate-45');
-    bar1.classList.toggle('translate-y-2');
-    bar2.classList.toggle('opacity-0');
-    bar3.classList.toggle('-rotate-45');
-    bar3.classList.toggle('-translate-y-2');
+    isOpen = !isOpen;
+    toggle.setAttribute('aria-expanded', String(isOpen));
+
+    if (isOpen) {
+      menu.style.maxHeight = menu.scrollHeight + 'px';
+      menu.style.opacity = '1';
+    } else {
+      menu.style.maxHeight = '0';
+      menu.style.opacity = '0';
+    }
+
+    bar1.classList.toggle('rotate-45', isOpen);
+    bar1.classList.toggle('translate-y-2', isOpen);
+    bar2.classList.toggle('opacity-0', isOpen);
+    bar3.classList.toggle('-rotate-45', isOpen);
+    bar3.classList.toggle('-translate-y-2', isOpen);
   });
 
+  function closeMenu() {
+    isOpen = false;
+    menu.style.maxHeight = '0';
+    menu.style.opacity = '0';
+    toggle.setAttribute('aria-expanded', 'false');
+    bar1.classList.remove('rotate-45', 'translate-y-2');
+    bar2.classList.remove('opacity-0');
+    bar3.classList.remove('-rotate-45', '-translate-y-2');
+  }
+
   document.querySelectorAll('.mobile-link').forEach((link) => {
-    link.addEventListener('click', () => {
-      menu.classList.add('hidden');
-      toggle.setAttribute('aria-expanded', 'false');
-      bar1.classList.remove('rotate-45', 'translate-y-2');
-      bar2.classList.remove('opacity-0');
-      bar3.classList.remove('-rotate-45', '-translate-y-2');
-    });
+    link.addEventListener('click', closeMenu);
   });
+
+  function updateHeaderStyle(scrolled: boolean) {
+    if (scrolled === isScrolled) return;
+    isScrolled = scrolled;
+
+    if (scrolled) {
+      header.classList.add('bg-cream/95', 'backdrop-blur-md', 'shadow-md', 'border-b', 'border-cream-dark');
+      logoName.classList.replace('text-cream', 'text-charcoal');
+      bars.forEach(b => { b.classList.replace('bg-cream', 'bg-charcoal'); });
+      navLinksEls.forEach(link => {
+        if (!link.classList.contains('text-terracotta')) {
+          link.classList.replace('text-cream/70', 'text-charcoal-light');
+        }
+      });
+    } else {
+      header.classList.remove('bg-cream/95', 'backdrop-blur-md', 'shadow-md', 'border-b', 'border-cream-dark');
+      logoName.classList.replace('text-charcoal', 'text-cream');
+      bars.forEach(b => { b.classList.replace('bg-charcoal', 'bg-cream'); });
+      navLinksEls.forEach(link => {
+        if (!link.classList.contains('text-terracotta')) {
+          link.classList.replace('text-charcoal-light', 'text-cream/70');
+        }
+      });
+    }
+  }
+
+  window.addEventListener('scroll', () => {
+    updateHeaderStyle(window.scrollY > 80);
+  }, { passive: true });
+
+  // Active nav link tracking
+  const sections = document.querySelectorAll('section[id]');
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinksEls.forEach(link => {
+          const isActive = link.getAttribute('data-section') === id;
+          const inactiveClass = isScrolled ? 'text-charcoal-light' : 'text-cream/70';
+          link.classList.toggle('text-terracotta', isActive);
+          if (!isActive) {
+            link.classList.remove('text-cream/70', 'text-charcoal-light');
+            link.classList.add(inactiveClass);
+          } else {
+            link.classList.remove('text-cream/70', 'text-charcoal-light');
+          }
+        });
+      }
+    });
+  }, { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' });
+
+  sections.forEach(section => sectionObserver.observe(section));
 </script>

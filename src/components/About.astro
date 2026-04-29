@@ -1,23 +1,22 @@
 <section id="a-propos" class="py-20 md:py-28 bg-cream-dark">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-16">
+    <div class="text-center mb-16 animate-on-scroll">
       <p class="text-terracotta font-semibold mb-3">Faire connaissance</p>
       <h2 class="text-3xl md:text-4xl font-bold">À propos</h2>
+      <div class="w-16 h-1 bg-terracotta rounded-full mx-auto mt-4"></div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
       {/* Colonne gauche — Présentation */}
-      <div>
-        {/* Photo placeholder */}
-        <div class="w-36 h-36 bg-terracotta/10 rounded-2xl flex items-center justify-center mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 text-terracotta/40">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-          </svg>
+      <div class="animate-on-scroll stagger-1">
+        {/* Profile placeholder with initials */}
+        <div class="w-36 h-36 bg-gradient-to-br from-terracotta to-terracotta-dark rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+          <span class="text-4xl font-bold text-white">CM</span>
         </div>
 
         <h3 class="text-2xl font-bold mb-4">Cédric Mouilleron</h3>
         <p class="text-warm-gray leading-relaxed mb-4">
-          Passionné par le web depuis plus de 20 ans, j'ai choisi de mettre mon expérience au service des commerces de proximité. Mon objectif : vous offrir un site qui vous ressemble et qui attire vos clients.
+          Passionné par le web depuis plus de 20 ans, j'ai choisi de mettre mon expérience au service des artisans et indépendants. Mon objectif : vous offrir un site qui vous ressemble et qui attire vos clients.
         </p>
         <p class="text-warm-gray leading-relaxed mb-8">
           Basé à Crolles, au cœur de la vallée du Grésivaudan, je privilégie le contact direct et la relation de confiance. Chaque projet est unique, chaque solution est sur mesure.
@@ -25,23 +24,23 @@
 
         {/* Badges qualités */}
         <div class="grid grid-cols-2 gap-4">
-          <div class="bg-white rounded-xl p-4 border border-cream-dark text-center">
+          <div class="bg-white rounded-xl p-4 border border-cream-dark border-l-4 border-l-terracotta text-center hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
             <span class="text-2xl font-bold text-terracotta">20+</span>
             <p class="text-sm text-warm-gray mt-1">ans d'expérience</p>
           </div>
-          <div class="bg-white rounded-xl p-4 border border-cream-dark text-center">
+          <div class="bg-white rounded-xl p-4 border border-cream-dark border-l-4 border-l-terracotta text-center hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-terracotta mx-auto">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
             </svg>
             <p class="text-sm text-warm-gray mt-1">Proximité & écoute</p>
           </div>
-          <div class="bg-white rounded-xl p-4 border border-cream-dark text-center">
+          <div class="bg-white rounded-xl p-4 border border-cream-dark border-l-4 border-l-terracotta text-center hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-terracotta mx-auto">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
             </svg>
             <p class="text-sm text-warm-gray mt-1">Réactivité</p>
           </div>
-          <div class="bg-white rounded-xl p-4 border border-cream-dark text-center">
+          <div class="bg-white rounded-xl p-4 border border-cream-dark border-l-4 border-l-terracotta text-center hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-terracotta mx-auto">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128Zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.994 15.994 0 0 1 1.622-3.395m3.42 3.42a15.995 15.995 0 0 0 4.764-4.648l3.876-5.814a1.151 1.151 0 0 0-1.597-1.597L14.146 6.32a15.996 15.996 0 0 0-4.649 4.763m3.42 3.42a6.776 6.776 0 0 0-3.42-3.42" />
             </svg>
@@ -51,8 +50,8 @@
       </div>
 
       {/* Colonne droite — Carte */}
-      <div>
-        <div id="map" class="w-full h-80 md:h-full md:min-h-[500px] rounded-2xl border border-cream-dark z-0" role="img" aria-label="Carte montrant la localisation à Crolles"></div>
+      <div class="animate-on-scroll stagger-2">
+        <div id="map" class="w-full h-80 md:h-full md:min-h-[500px] rounded-2xl shadow-lg ring-1 ring-cream-dark z-0" role="img" aria-label="Carte montrant la localisation à Crolles"></div>
         <p class="text-sm text-warm-gray mt-3 text-center">Basé à Crolles, vallée du Grésivaudan</p>
       </div>
     </div>

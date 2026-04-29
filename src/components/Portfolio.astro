@@ -8,6 +8,7 @@ const projects = [
     title: "Boulangerie du Quartier",
     category: "Site vitrine",
     description: "Un site chaleureux mettant en avant les produits artisanaux et les horaires d'ouverture.",
+    tech: ["Astro", "Tailwind", "Responsive"],
     color: "bg-terracotta/10",
     url: "https://mouilleronweb-boulangerie.netlify.app/",
     image: portfolioBoulangerie.src,
@@ -16,6 +17,7 @@ const projects = [
     title: "Éclat Électricité",
     category: "Site vitrine",
     description: "Un site professionnel pour un électricien avec services détaillés et demande de devis.",
+    tech: ["Astro", "Tailwind", "Formulaire"],
     color: "bg-amber-100",
     url: "https://mouilleronweb-electricien.netlify.app/",
     image: portfolioElectricien.src,
@@ -23,7 +25,8 @@ const projects = [
   {
     title: "Duval Plomberie",
     category: "Site vitrine",
-    description: "Un site de proximité pour un plombier-chauffagiste avec devis en ligne et interventions d'urgence.",
+    description: "Un site professionnel pour un plombier-chauffagiste avec devis en ligne et interventions d'urgence.",
+    tech: ["Astro", "Tailwind", "Carte"],
     color: "bg-emerald-100",
     url: "https://mouilleronweb-plombier.netlify.app/",
     image: portfolioPlombier.src,
@@ -33,27 +36,36 @@ const projects = [
 
 <section id="portfolio" class="py-20 md:py-28 bg-cream-dark">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-16">
+    <div class="text-center mb-16 animate-on-scroll">
       <p class="text-terracotta font-semibold mb-3">Mon travail</p>
       <h2 class="text-3xl md:text-4xl font-bold">Réalisations</h2>
+      <div class="w-16 h-1 bg-terracotta rounded-full mx-auto mt-4"></div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {projects.map((project) => {
+      {projects.map((project, i) => {
         const Tag = project.url ? 'a' : 'div';
         const linkProps = project.url ? { href: project.url, target: "_blank", rel: "noopener noreferrer" } : {};
         return (
-          <Tag {...linkProps} class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 block">
+          <Tag {...linkProps} class={`group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:border-terracotta/30 border border-transparent transition-all duration-300 block animate-on-scroll stagger-${i + 1}`}>
             {project.image ? (
-              <div class="h-52 overflow-hidden">
+              <div class="h-56 md:h-64 overflow-hidden relative">
                 <img
                   src={project.image}
                   alt={project.title}
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
+                <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                  <span class="text-white text-sm font-medium flex items-center gap-2">
+                    Voir le projet
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    </svg>
+                  </span>
+                </div>
               </div>
             ) : (
-              <div class={`${project.color} h-52 flex items-center justify-center`}>
+              <div class={`${project.color} h-56 md:h-64 flex items-center justify-center`}>
                 <div class="w-16 h-16 bg-white/60 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-charcoal-light">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0 0 22.5 18.75V5.25A2.25 2.25 0 0 0 20.25 3H3.75A2.25 2.25 0 0 0 1.5 5.25v13.5A2.25 2.25 0 0 0 3.75 21z" />
@@ -65,13 +77,12 @@ const projects = [
               <span class="text-sm text-terracotta font-medium">{project.category}</span>
               <h3 class="text-lg font-bold mt-1 mb-2">{project.title}</h3>
               <p class="text-warm-gray text-sm leading-relaxed">{project.description}</p>
-              {project.url && (
-                <span class="inline-flex items-center gap-1 text-terracotta text-sm font-medium mt-3">
-                  Voir le site
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                  </svg>
-                </span>
+              {project.tech && (
+                <div class="flex flex-wrap gap-2 mt-3">
+                  {project.tech.map((t) => (
+                    <span class="text-xs px-2.5 py-1 bg-cream-dark rounded-full text-warm-gray font-medium">{t}</span>
+                  ))}
+                </div>
               )}
             </div>
           </Tag>
@@ -79,7 +90,7 @@ const projects = [
       })}
     </div>
 
-    <p class="text-center text-warm-gray mt-12 text-sm">
+    <p class="text-center text-warm-gray mt-12 text-sm animate-on-scroll">
       Ces projets sont des exemples. Votre site sera unique et conçu sur mesure.
     </p>
   </div>
