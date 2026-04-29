@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import portfolioBoulangerie from '../assets/images/portfolio-boulangerie.jpg';
 import portfolioElectricien from '../assets/images/portfolio-electricien.jpg';
 import portfolioPlombier from '../assets/images/portfolio-plombier.jpg';
@@ -11,7 +12,7 @@ const projects = [
     tech: ["Astro", "Tailwind", "Responsive"],
     color: "bg-terracotta/10",
     url: "https://mouilleronweb-boulangerie.netlify.app/",
-    image: portfolioBoulangerie.src,
+    image: portfolioBoulangerie,
   },
   {
     title: "Éclat Électricité",
@@ -20,7 +21,7 @@ const projects = [
     tech: ["Astro", "Tailwind", "Formulaire"],
     color: "bg-amber-100",
     url: "https://mouilleronweb-electricien.netlify.app/",
-    image: portfolioElectricien.src,
+    image: portfolioElectricien,
   },
   {
     title: "Duval Plomberie",
@@ -29,7 +30,7 @@ const projects = [
     tech: ["Astro", "Tailwind", "Carte"],
     color: "bg-emerald-100",
     url: "https://mouilleronweb-plombier.netlify.app/",
-    image: portfolioPlombier.src,
+    image: portfolioPlombier,
   },
 ];
 ---
@@ -50,9 +51,14 @@ const projects = [
           <Tag {...linkProps} class={`group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:border-terracotta/30 border border-transparent transition-all duration-300 block animate-on-scroll stagger-${i + 1}`}>
             {project.image ? (
               <div class="h-56 md:h-64 overflow-hidden relative">
-                <img
+                <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={`Site web ${project.title} — réalisé par Mouilleron Web`}
+                  width={600}
+                  height={400}
+                  format="webp"
+                  quality={80}
+                  loading="lazy"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">

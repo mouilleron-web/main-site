@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://mouilleronweb.netlify.app/sitemap-index.xml

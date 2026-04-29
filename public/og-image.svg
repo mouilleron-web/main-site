@@ -1,0 +1,15 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#1E1E1E"/>
+  <rect x="0" y="0" width="1200" height="630" fill="url(#grad)" opacity="0.3"/>
+  <defs>
+    <radialGradient id="grad" cx="30%" cy="50%">
+      <stop offset="0%" stop-color="#C2703E" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#1E1E1E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="80" y="280" width="60" height="3" rx="1.5" fill="#C2703E"/>
+  <text x="80" y="340" font-family="Georgia, serif" font-size="56" font-weight="bold" fill="#FDFBF7">MOUILLERON</text>
+  <text x="510" y="340" font-family="Georgia, serif" font-size="56" font-weight="300" fill="#C2703E">WEB</text>
+  <text x="80" y="400" font-family="system-ui, sans-serif" font-size="28" fill="#FDFBF7" opacity="0.6">Développeur web freelance — Crolles, Grenoble</text>
+  <text x="80" y="460" font-family="system-ui, sans-serif" font-size="22" fill="#FDFBF7" opacity="0.4">Sites web sur mesure pour artisans et indépendants</text>
+</svg>

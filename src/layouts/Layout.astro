@@ -6,10 +6,109 @@ interface Props {
   description?: string;
 }
 
+const siteUrl = 'https://mouilleronweb.netlify.app';
+
 const {
-  title = "Mouilleron — Web",
-  description = "Création de sites web modernes et performants pour les artisans et indépendants. Design sur mesure, responsive et optimisé."
+  title = "Mouilleron Web — Développeur web freelance à Crolles, Grenoble",
+  description = "Création de sites web sur mesure pour artisans et indépendants en Isère. Design moderne, référencement Google, hébergement inclus. Basé à Crolles, vallée du Grésivaudan."
 } = Astro.props;
+
+const ogImage = `${siteUrl}/og-image.svg`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "url": siteUrl,
+      "name": "Mouilleron Web",
+      "description": description,
+      "publisher": { "@id": `${siteUrl}/#person` },
+      "inLanguage": "fr-FR"
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      "name": "Cédric Mouilleron",
+      "url": siteUrl,
+      "email": "mouilleronweb@gmail.com",
+      "telephone": "+33678913367",
+      "jobTitle": "Développeur Web Freelance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Crolles",
+        "addressRegion": "Isère",
+        "addressCountry": "FR"
+      },
+      "knowsAbout": [
+        "Création de sites web",
+        "Développement web",
+        "Référencement SEO",
+        "Design responsive",
+        "Astro",
+        "Tailwind CSS"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/mouilleron/"
+      ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${siteUrl}/#business`,
+      "name": "Mouilleron Web",
+      "description": "Création de sites web sur mesure pour artisans et indépendants. Design moderne, référencement Google, hébergement inclus.",
+      "url": siteUrl,
+      "telephone": "+33678913367",
+      "email": "mouilleronweb@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Crolles",
+        "addressRegion": "Isère",
+        "postalCode": "38920",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.2833,
+        "longitude": 5.8833
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Crolles" },
+        { "@type": "City", "name": "Grenoble" },
+        { "@type": "AdministrativeArea", "name": "Vallée du Grésivaudan" },
+        { "@type": "AdministrativeArea", "name": "Isère" }
+      ],
+      "founder": { "@id": `${siteUrl}/#person` },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services de développement web",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Création de site web", "description": "Site vitrine unique et moderne pour artisans et indépendants" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Refonte de site web", "description": "Modernisation de site existant avec design frais et performances optimales" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Référencement SEO", "description": "Optimisation pour les moteurs de recherche et Google Business" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Hébergement web", "description": "Nom de domaine, mise en ligne et certificat de sécurité inclus" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Maintenance de site", "description": "Mises à jour, corrections et ajout de contenu" }
+          }
+        ]
+      }
+    }
+  ]
+};
 ---
 
 <!doctype html>
@@ -18,12 +117,40 @@ const {
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SEO -->
+    <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="author" content="Cédric Mouilleron" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+    <link rel="canonical" href={siteUrl} />
+    <meta name="theme-color" content="#C2703E" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Mouilleron Web" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Fonts -->
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-    <title>{title}</title>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </head>
   <body class="antialiased">
     <slot />
