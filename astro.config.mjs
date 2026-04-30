@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://mouilleronweb.netlify.app',
+  site: 'https://mouilleronweb.mouilleronweb.workers.dev',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()]
