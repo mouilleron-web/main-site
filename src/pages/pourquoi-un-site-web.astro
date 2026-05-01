@@ -1,0 +1,237 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Pourquoi un artisan a besoin d'un site web — Mouilleron Web";
+const description = "Vos clients vous cherchent sur Google. Un site web professionnel vous rend visible, crédible et accessible 24h/24. Je m'occupe de tout : création, référencement, hébergement.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+
+  <main>
+    <!-- Hero compact -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28">
+      <div class="absolute inset-0 bg-charcoal">
+        <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 50%, rgba(194,112,62,0.12) 0%, transparent 50%);"></div>
+      </div>
+      <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <p class="text-terracotta font-semibold mb-4 text-sm tracking-[0.2em] uppercase" style="animation: fade-up 0.8s ease-out both;">
+          Pour les artisans et indépendants
+        </p>
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-cream" style="animation: fade-up 0.8s ease-out 0.15s both;">
+          Pourquoi avoir un <span class="text-terracotta italic">site web</span> aujourd'hui ?
+        </h1>
+        <p class="text-lg text-cream/60 max-w-2xl mx-auto font-light" style="animation: fade-up 0.8s ease-out 0.3s both;">
+          Vous êtes artisan, commerçant, indépendant. Votre savoir-faire parle pour vous — encore faut-il qu'on vous trouve.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 1: Vos clients vous cherchent -->
+    <section class="py-20 md:py-28">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="animate-on-scroll">
+            <p class="text-terracotta font-semibold mb-3 text-sm tracking-[0.2em] uppercase">Le saviez-vous ?</p>
+            <h2 class="text-2xl md:text-3xl font-bold mb-6">Vos clients vous cherchent sur Google</h2>
+            <p class="text-warm-gray leading-relaxed mb-4">
+              Quand quelqu'un a besoin d'un plombier, d'un électricien ou d'une boulangerie, son premier réflexe c'est de chercher sur Google. <strong class="text-charcoal">« plombier Grenoble »</strong>, <strong class="text-charcoal">« boulangerie près de chez moi »</strong>, <strong class="text-charcoal">« électricien Crolles »</strong>.
+            </p>
+            <p class="text-warm-gray leading-relaxed">
+              Si vous n'avez pas de site, c'est votre concurrent qui apparaît. Pas parce qu'il est meilleur — parce qu'il est visible.
+            </p>
+          </div>
+          <div class="animate-on-scroll stagger-1">
+            <div class="bg-cream-dark rounded-2xl p-8 space-y-6">
+              <div class="flex items-start gap-4">
+                <span class="text-3xl font-bold text-terracotta">97%</span>
+                <p class="text-warm-gray text-sm leading-relaxed">des consommateurs recherchent un professionnel local sur internet avant de le contacter</p>
+              </div>
+              <div class="border-t border-cream"></div>
+              <div class="flex items-start gap-4">
+                <span class="text-3xl font-bold text-terracotta">70%</span>
+                <p class="text-warm-gray text-sm leading-relaxed">ne regardent que la première page de Google — si vous n'y êtes pas, vous n'existez pas</p>
+              </div>
+              <div class="border-t border-cream"></div>
+              <div class="flex items-start gap-4">
+                <span class="text-3xl font-bold text-terracotta">46%</span>
+                <p class="text-warm-gray text-sm leading-relaxed">des recherches Google ont une intention locale : les gens cherchent un professionnel à côté de chez eux</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Un site qui travaille pour vous -->
+    <section class="py-20 md:py-28 bg-cream-dark">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-16 animate-on-scroll">
+          <p class="text-terracotta font-semibold mb-3 text-sm tracking-[0.2em] uppercase">Votre vitrine en ligne</p>
+          <h2 class="text-2xl md:text-3xl font-bold">Un site qui travaille pour vous, 24h/24</h2>
+          <div class="w-16 h-1 bg-terracotta rounded-full mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="animate-on-scroll stagger-1">
+            <div class="bg-cream rounded-2xl p-8 h-full">
+              <div class="w-12 h-12 rounded-full bg-terracotta/10 flex items-center justify-center text-terracotta mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+              </div>
+              <h3 class="text-lg font-bold mb-3">Toujours disponible</h3>
+              <p class="text-warm-gray text-sm leading-relaxed">
+                Votre site présente vos services même quand vous êtes sur un chantier, en livraison ou en repos. Vos clients trouvent vos horaires, vos coordonnées et peuvent vous contacter à tout moment.
+              </p>
+            </div>
+          </div>
+          <div class="animate-on-scroll stagger-2">
+            <div class="bg-cream rounded-2xl p-8 h-full">
+              <div class="w-12 h-12 rounded-full bg-terracotta/10 flex items-center justify-center text-terracotta mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg>
+              </div>
+              <h3 class="text-lg font-bold mb-3">Crédibilité immédiate</h3>
+              <p class="text-warm-gray text-sm leading-relaxed">
+                Un site professionnel rassure. Quand un client hésite entre deux artisans, celui qui a un beau site avec des photos de ses réalisations inspire confiance. C'est votre carte de visite moderne.
+              </p>
+            </div>
+          </div>
+          <div class="animate-on-scroll stagger-3">
+            <div class="bg-cream rounded-2xl p-8 h-full">
+              <div class="w-12 h-12 rounded-full bg-terracotta/10 flex items-center justify-center text-terracotta mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" /></svg>
+              </div>
+              <h3 class="text-lg font-bold mb-3">Nouveaux clients</h3>
+              <p class="text-warm-gray text-sm leading-relaxed">
+                Le bouche-à-oreille c'est bien, mais ça a ses limites. Un site web vous permet de toucher des clients qui ne vous connaissent pas encore — ceux qui viennent d'emménager, ceux qui cherchent un nouveau prestataire.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Le référencement expliqué simplement -->
+    <section class="py-20 md:py-28">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="order-2 md:order-1 animate-on-scroll">
+            <div class="bg-charcoal rounded-2xl p-8 text-cream">
+              <p class="text-sm text-cream/40 mb-4 font-mono">google.fr</p>
+              <div class="space-y-4">
+                <div class="bg-white/5 rounded-xl p-4 border border-terracotta/30">
+                  <p class="text-terracotta text-sm font-semibold">duval-plomberie.fr</p>
+                  <p class="text-cream font-bold">Duval Plomberie — Plombier à Grenoble</p>
+                  <p class="text-cream/50 text-sm">Dépannage, installation, rénovation. Devis gratuit...</p>
+                </div>
+                <div class="bg-white/5 rounded-xl p-4 opacity-40">
+                  <p class="text-warm-gray text-sm">autre-plombier.fr</p>
+                  <p class="text-cream/60">Un autre plombier...</p>
+                </div>
+                <div class="bg-white/5 rounded-xl p-4 opacity-20">
+                  <p class="text-warm-gray text-sm">encore-un.fr</p>
+                  <p class="text-cream/40">...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="order-1 md:order-2 animate-on-scroll stagger-1">
+            <p class="text-terracotta font-semibold mb-3 text-sm tracking-[0.2em] uppercase">Être trouvé sur Google</p>
+            <h2 class="text-2xl md:text-3xl font-bold mb-6">Le référencement, c'est quoi ?</h2>
+            <p class="text-warm-gray leading-relaxed mb-4">
+              Le référencement, c'est ce qui fait que votre site apparaît quand quelqu'un tape une recherche sur Google. Plus votre site est bien référencé, plus il remonte dans les résultats.
+            </p>
+            <p class="text-warm-gray leading-relaxed mb-4">
+              Concrètement, je m'assure que Google comprend bien ce que vous faites, où vous êtes, et pourquoi il devrait vous montrer en premier. Ça passe par les bons mots sur votre site, une bonne vitesse de chargement, et une inscription sur Google Business.
+            </p>
+            <p class="text-charcoal leading-relaxed font-semibold">
+              Vous n'avez rien de technique à faire — je m'occupe de tout.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Je m'occupe de tout -->
+    <section class="py-20 md:py-28 bg-cream-dark">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-16 animate-on-scroll">
+          <p class="text-terracotta font-semibold mb-3 text-sm tracking-[0.2em] uppercase">Zéro prise de tête</p>
+          <h2 class="text-2xl md:text-3xl font-bold">Je m'occupe de tout, de A à Z</h2>
+          <div class="w-16 h-1 bg-terracotta rounded-full mx-auto mt-4"></div>
+          <p class="text-warm-gray mt-6 max-w-2xl mx-auto leading-relaxed">
+            Vous me décrivez votre activité, je fais le reste. Pas de jargon, pas de complications. Vous recevez un site prêt à l'emploi.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="animate-on-scroll stagger-1 flex items-start gap-4 bg-cream rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-full bg-terracotta flex items-center justify-center shrink-0">
+              <span class="text-white font-bold">1</span>
+            </div>
+            <div>
+              <h3 class="font-bold mb-1">Création sur mesure</h3>
+              <p class="text-warm-gray text-sm leading-relaxed">Je crée votre site à votre image. Pas de template générique — un design unique qui reflète votre métier.</p>
+            </div>
+          </div>
+          <div class="animate-on-scroll stagger-2 flex items-start gap-4 bg-cream rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-full bg-terracotta flex items-center justify-center shrink-0">
+              <span class="text-white font-bold">2</span>
+            </div>
+            <div>
+              <h3 class="font-bold mb-1">Visible sur tous les écrans</h3>
+              <p class="text-warm-gray text-sm leading-relaxed">Téléphone, tablette, ordinateur — votre site s'adapte automatiquement. La majorité de vos clients vous trouveront depuis leur smartphone.</p>
+            </div>
+          </div>
+          <div class="animate-on-scroll stagger-3 flex items-start gap-4 bg-cream rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-full bg-terracotta flex items-center justify-center shrink-0">
+              <span class="text-white font-bold">3</span>
+            </div>
+            <div>
+              <h3 class="font-bold mb-1">Référencement Google</h3>
+              <p class="text-warm-gray text-sm leading-relaxed">Votre site est optimisé pour apparaître quand vos futurs clients vous cherchent. Je configure aussi votre fiche Google Business.</p>
+            </div>
+          </div>
+          <div class="animate-on-scroll stagger-4 flex items-start gap-4 bg-cream rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-full bg-terracotta flex items-center justify-center shrink-0">
+              <span class="text-white font-bold">4</span>
+            </div>
+            <div>
+              <h3 class="font-bold mb-1">Hébergement inclus</h3>
+              <p class="text-warm-gray text-sm leading-relaxed">Nom de domaine, mise en ligne, certificat de sécurité — tout est géré. Votre site est en ligne et sécurisé, point.</p>
+            </div>
+          </div>
+          <div class="animate-on-scroll stagger-5 flex items-start gap-4 bg-cream rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-full bg-terracotta flex items-center justify-center shrink-0">
+              <span class="text-white font-bold">5</span>
+            </div>
+            <div>
+              <h3 class="font-bold mb-1">Maintenance & évolutions</h3>
+              <p class="text-warm-gray text-sm leading-relaxed">Besoin de modifier un texte, ajouter une photo, changer vos horaires ? Je reste disponible après la livraison.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="py-20 md:py-28 bg-charcoal text-white relative">
+      <div class="absolute inset-0" style="background: radial-gradient(ellipse at 50% 50%, rgba(194,112,62,0.1) 0%, transparent 60%);"></div>
+      <div class="relative z-10 max-w-3xl mx-auto px-6 text-center animate-on-scroll">
+        <h2 class="text-2xl md:text-4xl font-bold text-cream mb-6">Prêt à être visible sur internet ?</h2>
+        <p class="text-cream/60 text-lg leading-relaxed mb-10 font-light">
+          Parlons de votre projet. Je vous explique comment ça se passe, sans engagement, et je vous montre des exemples de sites que j'ai réalisés pour d'autres artisans.
+        </p>
+        <a
+          href="/#contact"
+          class="inline-flex items-center justify-center px-10 py-4 bg-terracotta text-white font-bold rounded-xl hover:bg-terracotta-dark hover:scale-[1.02] hover:shadow-xl hover:shadow-terracotta/30 active:scale-[0.98] transition-all duration-200 shadow-lg shadow-terracotta/20 text-lg"
+        >
+          Discutons de votre projet
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
