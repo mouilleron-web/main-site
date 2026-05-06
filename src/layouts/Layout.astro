@@ -7,6 +7,7 @@ interface Props {
 }
 
 const siteUrl = 'https://mouilleronweb.fr';
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 
 const {
   title = "Mouilleron Web — Développeur web freelance à Crolles, Grenoble",
@@ -121,12 +122,12 @@ const schema = {
     <meta name="description" content={description} />
     <meta name="author" content="Cédric Mouilleron" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-    <link rel="canonical" href={siteUrl} />
+    <link rel="canonical" href={canonicalUrl} />
     <meta name="theme-color" content="#C2703E" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={siteUrl} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
